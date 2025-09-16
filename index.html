@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh's DSA + Project Roadmap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚀 Harsh's DSA + Project Roadmap</h1>
+            <p class="subtitle">Track your learning journey with progress and deadlines</p>
+        </header>
+
+        <!-- Overall Progress Summary -->
+        <div class="overall-section">
+            <div class="overall-card">
+                <div class="overall-header">
+                    <div class="overall-info">
+                        <div class="overall-label">Overall Completion</div>
+                        <div class="overall-description">Track your progress across all modules — click a progress bar to set progress, or tick "Done" to mark 100%.</div>
+                    </div>
+                    <div class="overall-stats" id="overallStats">0%</div>
+                </div>
+                <div class="overall-progress">
+                    <div class="overall-bar">
+                        <div class="overall-fill" id="overallFill"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="quick-tips">
+                <div class="tips-title">Quick Tips</div>
+                <div class="tips-content">
+                    • Click any progress bar to set progress (0–100%)<br>
+                    • Set target dates for each module<br>
+                    • Tick "Done" to instantly mark 100%
+                </div>
+            </div>
+        </div>
+
+        <!-- Phases Grid -->
+        <div class="phases-grid">
+            <!-- Phase 1: Basics & Foundation -->
+            <div class="phase-card" data-phase="1">
+                <div class="phase-header">
+                    <h2>📘 Phase 1: Basics & Foundation</h2>
+                    <div class="phase-percent" id="phasePercent-1">0%</div>
+                </div>
+                <p class="phase-description">Master programming fundamentals, arrays, strings & recursion.</p>
+
+                <div class="modules-list">
+                    <!-- Module 1 -->
+                    <div class="module" data-module="m1">
+                        <div class="module-header">
+                            <div class="module-title">Basics (C++/Python/Java)</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m1" data-target="m1">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m1">
+                                    <div class="progress-fill" id="bar-m1"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m1">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m1">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="module" data-module="m2">
+                        <div class="module-header">
+                            <div class="module-title">Arrays</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m2" data-target="m2">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m2">
+                                    <div class="progress-fill" id="bar-m2"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m2">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m2">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="module" data-module="m3">
+                        <div class="module-header">
+                            <div class="module-title">Strings</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m3" data-target="m3">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m3">
+                                    <div class="progress-fill" id="bar-m3"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m3">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m3">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 4 -->
+                    <div class="module" data-module="m4">
+                        <div class="module-header">
+                            <div class="module-title">Recursion</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m4" data-target="m4">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m4">
+                                    <div class="progress-fill" id="bar-m4"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m4">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m4">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Intermediate DSA -->
+            <div class="phase-card" data-phase="2">
+                <div class="phase-header">
+                    <h2>⚡ Phase 2: Intermediate DSA</h2>
+                    <div class="phase-percent" id="phasePercent-2">0%</div>
+                </div>
+                <p class="phase-description">Linked Lists, Stacks/Queues, Trees & Hashing — solve medium problems daily.</p>
+
+                <div class="modules-list">
+                    <!-- Module 5 -->
+                    <div class="module" data-module="m5">
+                        <div class="module-header">
+                            <div class="module-title">Linked List</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m5" data-target="m5">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m5">
+                                    <div class="progress-fill" id="bar-m5"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m5">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m5">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 6 -->
+                    <div class="module" data-module="m6">
+                        <div class="module-header">
+                            <div class="module-title">Stacks & Queues</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m6" data-target="m6">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m6">
+                                    <div class="progress-fill" id="bar-m6"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m6">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m6">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 7 -->
+                    <div class="module" data-module="m7">
+                        <div class="module-header">
+                            <div class="module-title">Trees</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m7" data-target="m7">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m7">
+                                    <div class="progress-fill" id="bar-m7"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m7">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m7">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 8 -->
+                    <div class="module" data-module="m8">
+                        <div class="module-header">
+                            <div class="module-title">Hashing</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m8" data-target="m8">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m8">
+                                    <div class="progress-fill" id="bar-m8"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m8">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m8">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3: Projects & Development -->
+            <div class="phase-card" data-phase="3">
+                <div class="phase-header">
+                    <h2>🛠️ Phase 3: Projects & Development</h2>
+                    <div class="phase-percent" id="phasePercent-3">0%</div>
+                </div>
+                <p class="phase-description">Build portfolio projects — frontend, backend, DB, and deployment.</p>
+
+                <div class="modules-list">
+                    <!-- Module 9 -->
+                    <div class="module" data-module="m9">
+                        <div class="module-header">
+                            <div class="module-title">Frontend (React/Next)</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m9" data-target="m9">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m9">
+                                    <div class="progress-fill" id="bar-m9"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m9">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m9">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 10 -->
+                    <div class="module" data-module="m10">
+                        <div class="module-header">
+                            <div class="module-title">Backend (Node/Express)</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m10" data-target="m10">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m10">
+                                    <div class="progress-fill" id="bar-m10"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m10">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m10">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 11 -->
+                    <div class="module" data-module="m11">
+                        <div class="module-header">
+                            <div class="module-title">Databases (SQL/Mongo)</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m11" data-target="m11">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m11">
+                                    <div class="progress-fill" id="bar-m11"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m11">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m11">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 12 -->
+                    <div class="module" data-module="m12">
+                        <div class="module-header">
+                            <div class="module-title">Git & GitHub</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m12" data-target="m12">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m12">
+                                    <div class="progress-fill" id="bar-m12"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m12">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m12">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4: Advanced & Placement Prep -->
+            <div class="phase-card" data-phase="4">
+                <div class="phase-header">
+                    <h2>🏆 Phase 4: Advanced & Placement Prep</h2>
+                    <div class="phase-percent" id="phasePercent-4">0%</div>
+                </div>
+                <p class="phase-description">System design, competitive programming and interview readiness.</p>
+
+                <div class="modules-list">
+                    <!-- Module 13 -->
+                    <div class="module" data-module="m13">
+                        <div class="module-header">
+                            <div class="module-title">Competitive Programming</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m13" data-target="m13">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m13">
+                                    <div class="progress-fill" id="bar-m13"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m13">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m13">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 14 -->
+                    <div class="module" data-module="m14">
+                        <div class="module-header">
+                            <div class="module-title">System Design</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m14" data-target="m14">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m14">
+                                    <div class="progress-fill" id="bar-m14"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m14">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m14">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 15 -->
+                    <div class="module" data-module="m15">
+                        <div class="module-header">
+                            <div class="module-title">Mock Interviews</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m15" data-target="m15">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m15">
+                                    <div class="progress-fill" id="bar-m15"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m15">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m15">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 16 -->
+                    <div class="module" data-module="m16">
+                        <div class="module-header">
+                            <div class="module-title">Placement Applications</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m16" data-target="m16">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m16">
+                                    <div class="progress-fill" id="bar-m16"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m16">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m16">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-text">Made with ❤️ by Harsh Bhardwaj</div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/hrshbhardwaj" target="_blank" title="LinkedIn" class="social-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/hrshbhardwaj" target="_blank" title="Instagram" class="social-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+                </a>
+                <a href="https://www.youtube.com/@hrshbhardwaj" target="_blank" title="YouTube" class="social-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+                </a>
+                <a href="https://github.com/hxrshbhardwaj" target="_blank" title="GitHub" class="social-link">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Cursor Trail Container -->
+    <div id="cursor-trail"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
