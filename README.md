@@ -169,9 +169,9 @@ This is a personal learning tracker, but feel free to:
 ## 📞 Support
 
 For questions or suggestions:
-- 📧 Email: harsh.bhardwaj@example.com
-- 💼 LinkedIn: [harsh-bhardwaj](https://linkedin.com/in/harsh-bhardwaj)
-- 📱 Instagram: [@harsh_bhardwaj](https://instagram.com/harsh_bhardwaj)
+- 📧 Email: bhardwajharsh740@gmail.com
+- 💼 LinkedIn: https://www.linkedin.com/in/hrshbhardwaj/
+- 📱 Instagram: [@hrshbhardwaj](https://instagram.com/hrshbhardwaj)
 
 ## 📄 License
 
