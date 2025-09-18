@@ -3,26 +3,1657 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsh's DSA + Project Roadmap</title>
+    <title>Harsh's Ultimate DSA Roadmap - Complete Dark Edition</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Dark Theme Colors */
+            --primary-bg: #0a0a0f;
+            --secondary-bg: #12121a;
+            --card-bg: rgba(18, 18, 26, 0.8);
+            --card-hover-bg: rgba(18, 18, 26, 0.95);
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            
+            /* Vibrant Colors for Highlights */
+            --neon-cyan: #00ffff;
+            --neon-purple: #8a2be2;
+            --neon-pink: #ff1493;
+            --neon-green: #39ff14;
+            --neon-orange: #ff6600;
+            --neon-yellow: #ffff00;
+            
+            /* Gradients */
+            --title-gradient: linear-gradient(45deg, #00ffff, #ff1493, #8a2be2, #39ff14);
+            --progress-gradient: linear-gradient(90deg, #00ffff, #8a2be2);
+            --card-gradient: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(138, 43, 226, 0.1));
+            --border-gradient: linear-gradient(90deg, #00ffff, #ff1493, #8a2be2);
+            
+            /* Text Colors */
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #808080;
+            --text-accent: #00ffff;
+            
+            /* Other Colors */
+            --success-color: #39ff14;
+            --warning-color: #ffff00;
+            --danger-color: #ff1493;
+            --shadow-color: rgba(0, 255, 255, 0.2);
+            
+            /* Spacing & Radius */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 9999px;
+        }
+
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 🌟 ENHANCED DARK THEME EFFECTS */
+        
+        /* Animated Grid Background */
+        .grid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes grid-move {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Floating Orbs */
+        .floating-orbs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: float-orb 8s ease-in-out infinite;
+        }
+
+        @keyframes float-orb {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-30px) scale(1.1); opacity: 1; }
+        }
+
+        /* Constellation Effect Enhanced */
+        .constellation-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        /* Loading Screen */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--glass-border);
+            border-top: 3px solid var(--neon-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            margin-top: var(--spacing-lg);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--neon-cyan);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Streak Counter Enhanced */
+        .streak-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 2px solid var(--neon-cyan);
+            color: var(--text-primary);
+            padding: 15px 25px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+            z-index: 1000;
+            transform: translateY(-100px);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            font-family: 'JetBrains Mono', monospace;
+            backdrop-filter: blur(10px);
+        }
+
+        .streak-counter.show {
+            transform: translateY(0);
+            animation: neon-pulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes neon-pulse {
+            0% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); }
+            100% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.6); }
+        }
+
+        /* Live Stats Panel */
+        .live-stats {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(15px);
+            min-width: 200px;
+            z-index: 1000;
+            transform: translateX(300px);
+            transition: all 0.5s ease;
+        }
+
+        .live-stats.show {
+            transform: translateX(0);
+        }
+
+        .stats-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .stats-value {
+            color: var(--neon-cyan);
+            font-weight: 600;
+        }
+
+        /* Progress Ring */
+        .progress-ring {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            z-index: 1000;
+        }
+
+        .progress-ring svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .progress-ring-circle {
+            fill: none;
+            stroke: var(--glass-border);
+            stroke-width: 4;
+        }
+
+        .progress-ring-progress {
+            fill: none;
+            stroke: var(--neon-cyan);
+            stroke-width: 4;
+            stroke-linecap: round;
+            transition: stroke-dasharray 0.5s ease;
+            filter: drop-shadow(0 0 5px var(--neon-cyan));
+        }
+
+        /* Celebration Modal */
+        .celebration-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .celebration-modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .celebration-content {
+            background: var(--card-bg);
+            padding: 50px;
+            border-radius: var(--radius-xl);
+            text-align: center;
+            color: var(--text-primary);
+            transform: scale(0.5);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border: 2px solid var(--neon-cyan);
+            backdrop-filter: blur(15px);
+        }
+
+        .celebration-modal.show .celebration-content {
+            transform: scale(1);
+        }
+
+        .celebration-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: celebrate-bounce 0.8s ease-in-out;
+        }
+
+        @keyframes celebrate-bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2) rotate(5deg); }
+        }
+
+        /* Achievement Badge */
+        .achievement-badge {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: var(--progress-gradient);
+            color: var(--primary-bg);
+            padding: 30px;
+            border-radius: var(--radius-full);
+            font-size: 3rem;
+            font-weight: 800;
+            z-index: 9999;
+            box-shadow: 0 15px 40px rgba(0, 255, 255, 0.5);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .achievement-badge.show {
+            transform: translate(-50%, -50%) scale(1);
+            animation: achievement-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes achievement-glow {
+            0% { box-shadow: 0 15px 40px rgba(0, 255, 255, 0.5); }
+            100% { box-shadow: 0 20px 60px rgba(0, 255, 255, 0.8); }
+        }
+
+        /* Quote Popup */
+        .quote-popup {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            padding: 20px 30px;
+            border-radius: var(--radius-lg);
+            max-width: 400px;
+            transform: translateX(-500px);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            font-style: italic;
+            backdrop-filter: blur(15px);
+        }
+
+        .quote-popup.show {
+            transform: translateX(0);
+        }
+
+        /* Confetti Animation */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            z-index: 9998;
+            pointer-events: none;
+            animation: confetti-fall 3s ease-out forwards;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-xl);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Header with Vibrant Title */
+        .header {
+            text-align: center;
+            padding: var(--spacing-2xl) var(--spacing-lg);
+            background: var(--card-bg);
+            border: 2px solid transparent;
+            background-image: var(--card-gradient);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--spacing-2xl);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--border-gradient);
+            border-radius: var(--radius-xl);
+            z-index: -1;
+            animation: border-dance 3s linear infinite;
+        }
+
+        @keyframes border-dance {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            background: var(--title-gradient);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-sm);
+            letter-spacing: -0.02em;
+            animation: gradient-shift 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .premium-badge {
+            display: inline-block;
+            background: var(--progress-gradient);
+            color: var(--primary-bg);
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-full);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-top: var(--spacing-md);
+            animation: premium-glow 2s ease-in-out infinite alternate;
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        @keyframes premium-glow {
+            0% { transform: scale(1); box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3); }
+            100% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(0, 255, 255, 0.5); }
+        }
+
+        /* Glass Morphism Cards */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--card-gradient);
+            border-radius: var(--radius-lg);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 10px 40px rgba(0, 255, 255, 0.2);
+        }
+
+        /* Overall Progress Section */
+        .overall-section {
+            display: flex;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-2xl);
+            align-items: flex-start;
+        }
+
+        .overall-card {
+            flex: 1;
+        }
+
+        .overall-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+            gap: var(--spacing-md);
+        }
+
+        .overall-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .overall-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .overall-stats {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 10px currentColor;
+            min-width: 100px;
+            text-align: right;
+        }
+
+        .overall-progress {
+            margin-top: var(--spacing-md);
+        }
+
+        .overall-bar {
+            height: 20px;
+            background: var(--secondary-bg);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .overall-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--progress-gradient);
+            border-radius: var(--radius-full);
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            position: relative;
+        }
+
+        .overall-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+        .quick-tips {
+            min-width: 300px;
+        }
+
+        .tips-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.1rem;
+        }
+
+        .tips-content {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-zoom {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-zoom.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Phase Cards Enhanced */
+        .phase-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--progress-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .phase-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 15px 50px rgba(0, 255, 255, 0.2);
+        }
+
+        .phase-card:hover::before {
+            opacity: 1;
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+
+        .phase-card.certification::before {
+            background: linear-gradient(90deg, #ffecd2, #fcb69f);
+        }
+
+        .phase-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+            gap: var(--spacing-md);
+        }
+
+        .phase-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .phase-percent {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--neon-cyan);
+            background: var(--glass-bg);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-full);
+            border: 1px solid var(--glass-border);
+            min-width: 70px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .phase-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Modules Enhanced */
+        .modules-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .module {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .module:hover::before {
+            left: 100%;
+        }
+
+        .module:hover {
+            border-color: var(--neon-cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 255, 255, 0.15);
+        }
+
+        .module.completed {
+            border-color: var(--success-color);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+        }
+
+        .module-header {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .module-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .module-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        /* Date picker */
+        .date-picker {
+            font-family: 'Poppins', sans-serif;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: 2px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            min-width: 140px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .date-picker:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
+        }
+
+        /* Progress container */
+        .progress-container {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 16px;
+            background: var(--secondary-bg);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+            min-width: 80px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .progress-bar:hover {
+            transform: scaleY(1.1);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--progress-gradient);
+            border-radius: var(--radius-full);
+            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: progress-shimmer 2s infinite;
+        }
+
+        @keyframes progress-shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+
+        .percent-pill {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--neon-cyan);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-full);
+            min-width: 42px;
+            text-align: center;
+            white-space: nowrap;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Done checkbox */
+        .done-label {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            cursor: pointer;
+            user-select: none;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: all 0.2s ease;
+            padding: var(--spacing-xs);
+            border-radius: var(--radius-sm);
+        }
+
+        .done-label:hover {
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .done-checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--glass-border);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            appearance: none;
+            background: var(--glass-bg);
+            position: relative;
+        }
+
+        .done-checkbox:checked {
+            background: var(--success-color);
+            border-color: var(--success-color);
+        }
+
+        .done-checkbox:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--primary-bg);
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* AI Tools Section */
+        .ai-tools {
+            margin: var(--spacing-2xl) 0;
+            background: var(--card-bg);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(15px);
+        }
+
+        .ai-tools h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+            background: var(--title-gradient);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .tool-card {
+            background: var(--glass-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .tool-card:hover::before {
+            left: 100%;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+        }
+
+        .tool-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: var(--spacing-sm) 0;
+        }
+
+        .tool-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .tool-card:hover h3 {
+            color: var(--neon-cyan);
+        }
+
+        /* Learning Resources Section - Enhanced */
+        .learning-resources {
+            margin: var(--spacing-2xl) 0;
+            background: var(--card-bg);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .learning-resources::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.03) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .learning-resources h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            background: var(--title-gradient);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            position: relative;
+            z-index: 1;
+        }
+
+        .resource-card {
+            background: var(--glass-bg);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            border: 2px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .resource-card:hover::before {
+            left: 100%;
+        }
+
+        .resource-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--progress-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .resource-card:hover::after {
+            opacity: 1;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(0, 255, 255, 0.15);
+            border-color: var(--neon-cyan);
+        }
+
+        /* Enhanced Resource Icons */
+        .resource-icon-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .resource-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            border-radius: var(--radius-full);
+            font-size: 2.5rem;
+            font-weight: bold;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Platform-specific icon styles */
+        .resource-card.leetcode .resource-icon {
+            background: linear-gradient(135deg, #ffa116, #ff8c00);
+            color: white;
+            box-shadow: 0 4px 20px rgba(255, 161, 22, 0.3);
+        }
+
+        .resource-card.hackerrank .resource-icon {
+            background: linear-gradient(135deg, #2ec866, #00d566);
+            color: white;
+            box-shadow: 0 4px 20px rgba(46, 200, 102, 0.3);
+        }
+
+        .resource-card.geeksforgeeks .resource-icon {
+            background: linear-gradient(135deg, #0f9d58, #00c853);
+            color: white;
+            box-shadow: 0 4px 20px rgba(15, 157, 88, 0.3);
+        }
+
+        .resource-card.codeforces .resource-icon {
+            background: linear-gradient(135deg, #1f8dd6, #1976d2);
+            color: white;
+            box-shadow: 0 4px 20px rgba(31, 141, 214, 0.3);
+        }
+
+        .resource-card.coursera .resource-icon {
+            background: linear-gradient(135deg, #0056d3, #2979ff);
+            color: white;
+            box-shadow: 0 4px 20px rgba(0, 86, 211, 0.3);
+        }
+
+        .resource-card.youtube .resource-icon {
+            background: linear-gradient(135deg, #ff0000, #d32f2f);
+            color: white;
+            box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .resource-card:hover .resource-icon {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 8px 30px rgba(0, 255, 255, 0.4);
+        }
+
+        /* Icon symbols/text */
+        .leetcode .resource-icon::before { content: 'LC'; }
+        .hackerrank .resource-icon::before { content: 'HR'; }
+        .geeksforgeeks .resource-icon::before { content: 'GFG'; }
+        .codeforces .resource-icon::before { content: 'CF'; }
+        .coursera .resource-icon::before { content: '🎓'; }
+        .youtube .resource-icon::before { content: '▶️'; }
+
+        .resource-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: var(--spacing-lg) 0 var(--spacing-md);
+            transition: all 0.3s ease;
+        }
+
+        .resource-card p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .resource-card:hover h3 {
+            background: var(--progress-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transform: translateY(-2px);
+        }
+
+        /* Platform badges */
+        .platform-badge {
+            display: inline-block;
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--neon-cyan);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: var(--spacing-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--glass-border);
+        }
+
+        .resource-card:hover .platform-badge {
+            background: rgba(0, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* DSA Practice Tracker */
+        .dsa-tracker {
+            background: var(--card-bg);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-xl);
+            margin: var(--spacing-2xl) 0;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(15px);
+        }
+
+        .dsa-tracker h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-lg);
+            background: var(--title-gradient);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+
+        .tracker-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(var(--neon-cyan) 0deg, var(--secondary-bg) 0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: var(--spacing-lg) auto;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            position: relative;
+            transition: all 0.5s ease;
+            border: 3px solid var(--glass-border);
+        }
+
+        .tracker-inputs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .tracker-inputs input {
+            padding: var(--spacing-md);
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--glass-border);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            width: 200px;
+            text-align: center;
+            transition: all 0.3s ease;
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            backdrop-filter: blur(10px);
+        }
+
+        .tracker-inputs input:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
+        }
+
+        .tracker-inputs button {
+            padding: var(--spacing-md) var(--spacing-xl);
+            border: none;
+            background: var(--progress-gradient);
+            color: var(--primary-bg);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .tracker-inputs button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .motivation {
+            margin-top: var(--spacing-lg);
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Enhanced Footer */
+        .footer {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-2xl);
+            margin-top: var(--spacing-2xl);
+            text-align: center;
+            backdrop-filter: blur(15px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg at 50% 50%,
+                transparent,
+                rgba(0, 255, 255, 0.05),
+                transparent,
+                rgba(255, 20, 147, 0.05),
+                transparent
+            );
+            animation: footer-rotate 10s linear infinite;
+        }
+
+        @keyframes footer-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-description {
+            font-size: 1rem;
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-secondary);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-full);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: var(--text-primary);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(0, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .social-link:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .social-link:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
+            border-color: var(--neon-cyan);
+        }
+
+        .social-link svg {
+            width: 28px;
+            height: 28px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-text {
+            margin-top: var(--spacing-xl);
+            font-size: 0.9rem;
+            opacity: 0.8;
+            color: var(--text-muted);
+        }
+
+        .creator-badge {
+            display: inline-block;
+            background: var(--progress-gradient);
+            color: var(--primary-bg);
+            padding: var(--spacing-md) var(--spacing-lg);
+            border-radius: var(--radius-full);
+            margin-top: var(--spacing-md);
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--spacing-md);
+            }
+            
+            .overall-section {
+                flex-direction: column;
+                gap: var(--spacing-md);
+            }
+            
+            .quick-tips {
+                min-width: auto;
+            }
+            
+            .phase-card {
+                padding: var(--spacing-lg);
+            }
+            
+            .module-controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--spacing-sm);
+            }
+            
+            .progress-container {
+                order: 2;
+                min-width: auto;
+            }
+            
+            .date-picker {
+                order: 1;
+                min-width: auto;
+            }
+            
+            .done-label {
+                order: 3;
+                justify-content: center;
+            }
+            
+            .tools-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .resources-grid {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: var(--spacing-lg);
+            }
+            
+            .tracker-inputs input {
+                width: 180px;
+            }
+
+            .social-links {
+                gap: var(--spacing-md);
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+            }
+
+            .social-link svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .resource-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+
+            .live-stats {
+                display: none;
+            }
+
+            .progress-ring {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .phase-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-sm);
+            }
+            
+            .module {
+                padding: var(--spacing-md);
+            }
+            
+            .module-title {
+                font-size: 1rem;
+            }
+            
+            .tracker-circle {
+                width: 120px;
+                height: 120px;
+                font-size: 1.2rem;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div style="text-align: center;">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Loading Ultimate DSA Experience...</div>
+        </div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="grid-background"></div>
+    <div class="floating-orbs" id="floatingOrbs"></div>
+    <canvas class="constellation-canvas" id="constellationCanvas"></canvas>
+    
+    <!-- Streak Counter -->
+    <div class="streak-counter" id="streakCounter">
+        <span style="margin-right: 8px;">🔥</span> <span id="streakCount">0</span> Day Streak!
+    </div>
+
+    <!-- Live Stats Panel -->
+    <div class="live-stats" id="liveStats">
+        <div style="font-weight: 600; margin-bottom: 10px; color: var(--neon-cyan);">Live Stats</div>
+        <div class="stats-item">
+            <span>Time Active:</span>
+            <span class="stats-value" id="timeActive">0m</span>
+        </div>
+        <div class="stats-item">
+            <span>Modules Done:</span>
+            <span class="stats-value" id="modulesDone">0</span>
+        </div>
+        <div class="stats-item">
+            <span>Current Phase:</span>
+            <span class="stats-value" id="currentPhase">1</span>
+        </div>
+    </div>
+
+    <!-- Progress Ring -->
+    <div class="progress-ring" id="progressRing">
+        <svg>
+            <circle class="progress-ring-circle" cx="30" cy="30" r="26"></circle>
+            <circle class="progress-ring-progress" cx="30" cy="30" r="26" id="progressCircle"></circle>
+        </svg>
+    </div>
+
+    <!-- Celebration Modal -->
+    <div class="celebration-modal" id="celebrationModal">
+        <div class="celebration-content">
+            <div class="celebration-title">🎉 AMAZING! 🎉</div>
+            <p id="celebrationMessage">You're making incredible progress!</p>
+            <button onclick="closeCelebration()" style="margin-top: 20px; padding: 15px 30px; background: var(--progress-gradient); color: var(--primary-bg); border: none; border-radius: 25px; font-weight: 600; cursor: pointer; font-size: 1rem;">Continue Journey</button>
+        </div>
+    </div>
+
+    <!-- Achievement Badge -->
+    <div class="achievement-badge" id="achievementBadge">🏆</div>
+
+    <!-- Dynamic Quote -->
+    <div class="quote-popup" id="quotePopup">
+        <span id="quoteText">"Code is poetry written in logic! 💻✨"</span>
+    </div>
+
     <div class="container">
+        <!-- Header -->
         <header class="header">
-            <h1>🚀 Harsh's DSA + Project Roadmap</h1>
-            <p class="subtitle">Track your learning journey with progress and deadlines</p>
+            <h1 id="mainTitle">⚡ HARSH DSA ROADMAP ⚡</h1>
+            <p class="subtitle">The Ultimate Dark Edition - Premium Learning Experience</p>
+            <div class="premium-badge">✨ EXCLUSIVE PREMIUM EDITION ✨</div>
         </header>
 
-        <!-- Overall Progress Summary -->
-        <div class="overall-section">
-            <div class="overall-card">
+        <!-- Overall Progress -->
+        <div class="overall-section reveal">
+            <div class="overall-card glass-card">
                 <div class="overall-header">
                     <div class="overall-info">
-                        <div class="overall-label">Overall Completion</div>
-                        <div class="overall-description">Track your progress across all modules — click a progress bar to set progress, or tick "Done" to mark 100%.</div>
+                        <div class="overall-label">Overall Mastery</div>
+                        <div class="overall-description">Track your journey to DSA mastery — click progress bars or mark modules complete!</div>
                     </div>
                     <div class="overall-stats" id="overallStats">0%</div>
                 </div>
@@ -32,31 +1663,33 @@
                     </div>
                 </div>
             </div>
-            <div class="quick-tips">
-                <div class="tips-title">Quick Tips</div>
+            <div class="quick-tips glass-card">
+                <div class="tips-title">🎯 Pro Tips</div>
                 <div class="tips-content">
-                    • Click any progress bar to set progress (0–100%)<br>
-                    • Set target dates for each module<br>
-                    • Tick "Done" to instantly mark 100%
+                    • Click progress bars to set completion (0-100%)<br>
+                    • Set target dates for accountability<br>
+                    • Mark "Done" for instant 100% completion<br>
+                    • Right-click progress bars to reset<br>
+                    • Track your daily streak for motivation!
                 </div>
             </div>
         </div>
 
         <!-- Phases Grid -->
         <div class="phases-grid">
-            <!-- Phase 1: Basics & Foundation -->
-            <div class="phase-card" data-phase="1">
+            <!-- Phase 1: Foundation -->
+            <div class="phase-card reveal" data-phase="1">
                 <div class="phase-header">
-                    <h2>📘 Phase 1: Basics & Foundation</h2>
+                    <h2>📘 Phase 1: Foundation Mastery</h2>
                     <div class="phase-percent" id="phasePercent-1">0%</div>
                 </div>
-                <p class="phase-description">Master programming fundamentals, arrays, strings & recursion.</p>
-
+                <p class="phase-description">Master programming fundamentals, arrays, strings & recursion with rock-solid foundation.</p>
+                
                 <div class="modules-list">
                     <!-- Module 1 -->
                     <div class="module" data-module="m1">
                         <div class="module-header">
-                            <div class="module-title">Basics (C++/Python/Java)</div>
+                            <div class="module-title">Programming Fundamentals (C++/Python/Java)</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m1" data-target="m1">
@@ -76,7 +1709,7 @@
                     <!-- Module 2 -->
                     <div class="module" data-module="m2">
                         <div class="module-header">
-                            <div class="module-title">Arrays</div>
+                            <div class="module-title">Arrays & Array Algorithms</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m2" data-target="m2">
@@ -96,7 +1729,7 @@
                     <!-- Module 3 -->
                     <div class="module" data-module="m3">
                         <div class="module-header">
-                            <div class="module-title">Strings</div>
+                            <div class="module-title">Strings & String Processing</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m3" data-target="m3">
@@ -116,7 +1749,7 @@
                     <!-- Module 4 -->
                     <div class="module" data-module="m4">
                         <div class="module-header">
-                            <div class="module-title">Recursion</div>
+                            <div class="module-title">Recursion & Backtracking</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m4" data-target="m4">
@@ -136,18 +1769,18 @@
             </div>
 
             <!-- Phase 2: Intermediate DSA -->
-            <div class="phase-card" data-phase="2">
+            <div class="phase-card reveal-left" data-phase="2">
                 <div class="phase-header">
                     <h2>⚡ Phase 2: Intermediate DSA</h2>
                     <div class="phase-percent" id="phasePercent-2">0%</div>
                 </div>
                 <p class="phase-description">Linked Lists, Stacks/Queues, Trees & Hashing — solve medium problems daily.</p>
-
+                
                 <div class="modules-list">
                     <!-- Module 5 -->
                     <div class="module" data-module="m5">
                         <div class="module-header">
-                            <div class="module-title">Linked List</div>
+                            <div class="module-title">Linked Lists & Operations</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m5" data-target="m5">
@@ -187,7 +1820,7 @@
                     <!-- Module 7 -->
                     <div class="module" data-module="m7">
                         <div class="module-header">
-                            <div class="module-title">Trees</div>
+                            <div class="module-title">Binary Trees & Tree Algorithms</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m7" data-target="m7">
@@ -207,7 +1840,7 @@
                     <!-- Module 8 -->
                     <div class="module" data-module="m8">
                         <div class="module-header">
-                            <div class="module-title">Hashing</div>
+                            <div class="module-title">Hashing & Hash Tables</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m8" data-target="m8">
@@ -227,18 +1860,18 @@
             </div>
 
             <!-- Phase 3: Projects & Development -->
-            <div class="phase-card" data-phase="3">
+            <div class="phase-card reveal" data-phase="3">
                 <div class="phase-header">
                     <h2>🛠️ Phase 3: Projects & Development</h2>
                     <div class="phase-percent" id="phasePercent-3">0%</div>
                 </div>
                 <p class="phase-description">Build portfolio projects — frontend, backend, DB, and deployment.</p>
-
+                
                 <div class="modules-list">
                     <!-- Module 9 -->
                     <div class="module" data-module="m9">
                         <div class="module-header">
-                            <div class="module-title">Frontend (React/Next)</div>
+                            <div class="module-title">Frontend Development (React/Next.js)</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m9" data-target="m9">
@@ -258,7 +1891,7 @@
                     <!-- Module 10 -->
                     <div class="module" data-module="m10">
                         <div class="module-header">
-                            <div class="module-title">Backend (Node/Express)</div>
+                            <div class="module-title">Backend Development (Node/Express)</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m10" data-target="m10">
@@ -278,7 +1911,7 @@
                     <!-- Module 11 -->
                     <div class="module" data-module="m11">
                         <div class="module-header">
-                            <div class="module-title">Databases (SQL/Mongo)</div>
+                            <div class="module-title">Database Design (SQL/MongoDB)</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m11" data-target="m11">
@@ -298,7 +1931,7 @@
                     <!-- Module 12 -->
                     <div class="module" data-module="m12">
                         <div class="module-header">
-                            <div class="module-title">Git & GitHub</div>
+                            <div class="module-title">Git, GitHub & Version Control</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m12" data-target="m12">
@@ -318,18 +1951,18 @@
             </div>
 
             <!-- Phase 4: Advanced & Placement Prep -->
-            <div class="phase-card" data-phase="4">
+            <div class="phase-card reveal-left" data-phase="4">
                 <div class="phase-header">
                     <h2>🏆 Phase 4: Advanced & Placement Prep</h2>
                     <div class="phase-percent" id="phasePercent-4">0%</div>
                 </div>
                 <p class="phase-description">System design, competitive programming and interview readiness.</p>
-
+                
                 <div class="modules-list">
                     <!-- Module 13 -->
                     <div class="module" data-module="m13">
                         <div class="module-header">
-                            <div class="module-title">Competitive Programming</div>
+                            <div class="module-title">Competitive Programming & Contests</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m13" data-target="m13">
@@ -349,7 +1982,7 @@
                     <!-- Module 14 -->
                     <div class="module" data-module="m14">
                         <div class="module-header">
-                            <div class="module-title">System Design</div>
+                            <div class="module-title">System Design & Architecture</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m14" data-target="m14">
@@ -369,7 +2002,7 @@
                     <!-- Module 15 -->
                     <div class="module" data-module="m15">
                         <div class="module-header">
-                            <div class="module-title">Mock Interviews</div>
+                            <div class="module-title">Mock Interviews & Practice</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m15" data-target="m15">
@@ -389,7 +2022,7 @@
                     <!-- Module 16 -->
                     <div class="module" data-module="m16">
                         <div class="module-header">
-                            <div class="module-title">Placement Applications</div>
+                            <div class="module-title">Placement Applications & Resume</div>
                         </div>
                         <div class="module-controls">
                             <input type="date" class="date-picker" id="date-m16" data-target="m16">
@@ -407,31 +2040,911 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Phase 5: Certification & Portfolio -->
+            <div class="phase-card certification reveal" data-phase="5">
+                <div class="phase-header">
+                    <h2>🎓 Phase 5: Certification & Portfolio</h2>
+                    <div class="phase-percent" id="phasePercent-5">0%</div>
+                </div>
+                <p class="phase-description">Industry certifications and professional portfolio completion.</p>
+                
+                <div class="modules-list">
+                    <!-- Module 17 -->
+                    <div class="module" data-module="m17">
+                        <div class="module-header">
+                            <div class="module-title">DSA Certification & Testing</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m17" data-target="m17">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m17">
+                                    <div class="progress-fill" id="bar-m17"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m17">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m17">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 18 -->
+                    <div class="module" data-module="m18">
+                        <div class="module-header">
+                            <div class="module-title">Full Stack Development Certificate</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m18" data-target="m18">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m18">
+                                    <div class="progress-fill" id="bar-m18"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m18">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m18">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 19 -->
+                    <div class="module" data-module="m19">
+                        <div class="module-header">
+                            <div class="module-title">Cloud Computing (AWS/Azure)</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m19" data-target="m19">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m19">
+                                    <div class="progress-fill" id="bar-m19"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m19">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m19">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Module 20 -->
+                    <div class="module" data-module="m20">
+                        <div class="module-header">
+                            <div class="module-title">Professional Portfolio & Showcase</div>
+                        </div>
+                        <div class="module-controls">
+                            <input type="date" class="date-picker" id="date-m20" data-target="m20">
+                            <div class="progress-container">
+                                <div class="progress-bar" data-target="m20">
+                                    <div class="progress-fill" id="bar-m20"></div>
+                                </div>
+                                <span class="percent-pill" id="pct-m20">0%</span>
+                            </div>
+                            <label class="done-label">
+                                <input type="checkbox" class="done-checkbox" data-target="m20">
+                                <span class="done-text">Done</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-text">Made with ❤️ by Harsh Bhardwaj</div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/hrshbhardwaj" target="_blank" title="LinkedIn" class="social-link">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        <!-- AI Tools Section -->
+        <section class="ai-tools glass-card reveal-zoom">
+            <h2>🤖 AI Tools for Learning & Development</h2>
+            <div class="tools-grid">
+                <a href="https://chat.openai.com" target="_blank" class="tool-card">
+                    <h3>ChatGPT</h3>
+                    <p>Advanced AI assistant for problem solving, debugging, and code explanations</p>
                 </a>
-                <a href="https://www.instagram.com/hrshbhardwaj" target="_blank" title="Instagram" class="social-link">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+                <a href="https://github.com/features/copilot" target="_blank" class="tool-card">
+                    <h3>GitHub Copilot</h3>
+                    <p>AI-powered code completion and intelligent programming assistance</p>
                 </a>
-                <a href="https://www.youtube.com/@hrshbhardwaj" target="_blank" title="YouTube" class="social-link">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+                <a href="https://www.notion.so/product/ai" target="_blank" class="tool-card">
+                    <h3>Notion AI</h3>
+                    <p>Smart knowledge management, note-taking, and study planning</p>
                 </a>
-                <a href="https://github.com/hxrshbhardwaj" target="_blank" title="GitHub" class="social-link">
-                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+                <a href="https://www.canva.com/ai-image-generator/" target="_blank" class="tool-card">
+                    <h3>Canva AI</h3>
+                    <p>AI-powered design tools for presentations and project visuals</p>
                 </a>
+                <a href="https://replit.com" target="_blank" class="tool-card">
+                    <h3>Replit AI</h3>
+                    <p>Cloud-based coding environment with AI coding assistance</p>
+                </a>
+                <a href="https://claude.ai" target="_blank" class="tool-card">
+                    <h3>Claude AI</h3>
+                    <p>Advanced reasoning, code analysis, and programming mentorship</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Enhanced Learning Resources Section -->
+        <section class="learning-resources glass-card reveal">
+            <h2>📚 Essential Learning Resources</h2>
+            <div class="resources-grid">
+                <a href="https://leetcode.com" target="_blank" class="resource-card leetcode">
+                    <div class="resource-icon-container">
+                        <div class="resource-icon"></div>
+                    </div>
+                    <h3>LeetCode</h3>
+                    <p>Master technical interviews with 2000+ problems, company-specific questions, and detailed solutions</p>
+                    <div class="platform-badge">Interview Prep</div>
+                </a>
+                
+                <a href="https://www.hackerrank.com" target="_blank" class="resource-card hackerrank">
+                    <div class="resource-icon-container">
+                        <div class="resource-icon"></div>
+                    </div>
+                    <h3>HackerRank</h3>
+                    <p>Coding challenges, skill assessments, and certification programs for career advancement</p>
+                    <div class="platform-badge">Skill Assessment</div>
+                </a>
+                
+                <a href="https://www.geeksforgeeks.org" target="_blank" class="resource-card geeksforgeeks">
+                    <div class="resource-icon-container">
+                        <div class="resource-icon"></div>
+                    </div>
+                    <h3>GeeksforGeeks</h3>
+                    <p>Comprehensive CS tutorials, articles, and coding interview preparation with detailed explanations</p>
+                    <div class="platform-badge">Learning Hub</div>
+                </a>
+                
+                <a href="https://codeforces.com" target="_blank" class="resource-card codeforces">
+                    <div class="resource-icon-container">
+                        <div class="resource-icon"></div>
+                    </div>
+                    <h3>Codeforces</h3>
+                    <p>Competitive programming contests and advanced problem-solving challenges</p>
+                    <div class="platform-badge">Competitive</div>
+                </a>
+                
+                <a href="https://www.coursera.org/courses?query=data%20structures%20algorithms" target="_blank" class="resource-card coursera">
+                    <div class="resource-icon-container">
+                        <div class="resource-icon"></div>
+                    </div>
+                    <h3>Coursera DSA Courses</h3>
+                    <p>University-level CS courses from Stanford, Princeton, and other top institutions</p>
+                    <div class="platform-badge">University Level</div>
+                </a>
+                
+                <a href="https://www.youtube.com/@takeUforward" target="_blank" class="resource-card youtube">
+                    <div class="resource-icon-container">
+                        <div class="resource-icon"></div>
+                    </div>
+                    <h3>Striver's DSA Sheet</h3>
+                    <p>Complete DSA video series with 180+ problems, detailed explanations, and structured learning</p>
+                    <div class="platform-badge">Video Learning</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- DSA Practice Tracker -->
+        <section class="dsa-tracker glass-card reveal">
+            <h2>📊 DSA Practice Tracker</h2>
+            <div class="tracker-circle" id="trackerCircle">0%</div>
+            <div class="tracker-inputs">
+                <input type="number" id="goal" placeholder="Set Goal (e.g. 100)" />
+                <input type="number" id="progress" placeholder="Problems Solved" />
+                <button onclick="updateTracker()">Update Progress</button>
+            </div>
+            <div class="motivation" id="motivationText">Set your goal and start practicing! 🚀</div>
+        </section>
+
+        <!-- Enhanced Footer -->
+        <footer class="footer glass-card reveal">
+            <div class="footer-content">
+                <h3>🌟 The Ultimate DSA Learning Experience</h3>
+                <p class="footer-description">
+                    Join the elite community of developers mastering Data Structures & Algorithms with the most advanced learning platform ever created!
+                </p>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/hrshbhardwaj" target="_blank" class="social-link linkedin" title="Connect on LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/hrshbhardwaj" target="_blank" class="social-link instagram" title="Follow on Instagram">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://www.youtube.com/@hrshbhardwaj" target="_blank" class="social-link youtube" title="Subscribe on YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                        </svg>
+                    </a>
+                    
+                    <a href="https://github.com/hxrshbhardwaj" target="_blank" class="social-link github" title="Follow on GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="footer-text">
+                    <div class="creator-badge">Made with ❤️ by Harsh Bhardwaj</div>
+                    <div style="margin-top: var(--spacing-lg); font-size: 0.9rem; color: var(--text-muted);">
+                        🎯 Premium Dark Edition | 🚀 Next-Level Learning | 💼 Your Path to Success
+                    </div>
+                </div>
             </div>
         </footer>
     </div>
 
-    <!-- Cursor Trail Container -->
-    <div id="cursor-trail"></div>
+    <script>
+        // 🚀 ULTIMATE DARK THEME DSA ROADMAP WITH ALL FEATURES
+        
+        class UltimateDarkRoadmap {
+            constructor() {
+                this.modules = ["m1", "m2", "m3", "m4", "m5", "m6", "m7", "m8", "m9", "m10", "m11", "m12", "m13", "m14", "m15", "m16", "m17", "m18", "m19", "m20"];
+                this.phases = [1, 2, 3, 4, 5];
+                this.startTime = Date.now();
+                this.completedModules = 0;
+                this.currentStreak = 0;
+                this.achievements = [];
+                this.lastVisit = localStorage.getItem('lastVisit') || Date.now();
+                
+                this.motivationalQuotes = [
+                    "Code is poetry written in logic! 💻✨",
+                    "Every expert was once a beginner! 🌱➡️🌳",
+                    "Debugging is like being a detective! 🕵️‍♂️🔍",
+                    "Algorithms are recipes for success! 👨‍🍳📊",
+                    "Data structures are the building blocks of dreams! 🏗️💭",
+                    "Persistence beats resistance! 💪🔥",
+                    "Code today, conquer tomorrow! ⚡🚀",
+                    "Think twice, code once! 🤔💡",
+                    "Optimization is the key to mastery! ⚙️🔑"
+                ];
+                
+                this.init();
+                this.initEffects();
+                this.initLiveStats();
+                this.initProgressRing();
+                this.hideLoading();
+                this.showRandomQuote();
+            }
 
-    <script src="app.js"></script>
+            // Hide loading screen
+            hideLoading() {
+                setTimeout(() => {
+                    const overlay = document.getElementById('loadingOverlay');
+                    overlay.style.opacity = '0';
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+                    }, 500);
+                }, 2000);
+            }
+
+            // Initialize visual effects
+            initEffects() {
+                this.initFloatingOrbs();
+                this.initConstellation();
+                this.initTypewriter();
+                this.initStreakCounter();
+                this.initScrollAnimations();
+            }
+
+            // Floating Orbs
+            initFloatingOrbs() {
+                const container = document.getElementById('floatingOrbs');
+                const colors = ['#00ffff', '#ff1493', '#8a2be2', '#39ff14', '#ff6600'];
+                
+                for (let i = 0; i < 25; i++) {
+                    const orb = document.createElement('div');
+                    orb.className = 'orb';
+                    
+                    const size = Math.random() * 10 + 4;
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    const delay = Math.random() * 8;
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    orb.style.width = size + 'px';
+                    orb.style.height = size + 'px';
+                    orb.style.left = x + 'px';
+                    orb.style.top = y + 'px';
+                    orb.style.background = color;
+                    orb.style.boxShadow = `0 0 20px ${color}`;
+                    orb.style.animationDelay = delay + 's';
+                    
+                    container.appendChild(orb);
+                }
+            }
+
+            // Enhanced Constellation
+            initConstellation() {
+                const canvas = document.getElementById('constellationCanvas');
+                const ctx = canvas.getContext('2d');
+                let stars = [];
+
+                function resizeCanvas() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                }
+
+                function createStars() {
+                    stars = [];
+                    for (let i = 0; i < 150; i++) {
+                        stars.push({
+                            x: Math.random() * canvas.width,
+                            y: Math.random() * canvas.height,
+                            radius: Math.random() * 2 + 0.5,
+                            vx: (Math.random() - 0.5) * 0.3,
+                            vy: (Math.random() - 0.5) * 0.3,
+                            alpha: Math.random(),
+                            color: `hsl(${Math.random() * 60 + 180}, 100%, 70%)`
+                        });
+                    }
+                }
+
+                function drawStars() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    
+                    stars.forEach(star => {
+                        star.x += star.vx;
+                        star.y += star.vy;
+                        
+                        if (star.x < 0 || star.x > canvas.width) star.vx *= -1;
+                        if (star.y < 0 || star.y > canvas.height) star.vy *= -1;
+                        
+                        ctx.beginPath();
+                        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = star.color + Math.floor(star.alpha * 255).toString(16).padStart(2, '0');
+                        ctx.fill();
+                        
+                        // Enhanced connections
+                        stars.forEach(otherStar => {
+                            const distance = Math.sqrt(
+                                Math.pow(star.x - otherStar.x, 2) + 
+                                Math.pow(star.y - otherStar.y, 2)
+                            );
+                            
+                            if (distance < 120) {
+                                ctx.beginPath();
+                                ctx.moveTo(star.x, star.y);
+                                ctx.lineTo(otherStar.x, otherStar.y);
+                                const opacity = (120 - distance) / 120 * 0.1;
+                                ctx.strokeStyle = `rgba(0, 255, 255, ${opacity})`;
+                                ctx.lineWidth = 0.5;
+                                ctx.stroke();
+                            }
+                        });
+                    });
+                    
+                    requestAnimationFrame(drawStars);
+                }
+
+                resizeCanvas();
+                createStars();
+                drawStars();
+
+                window.addEventListener('resize', () => {
+                    resizeCanvas();
+                    createStars();
+                });
+            }
+
+            // Typewriter Effect
+            initTypewriter() {
+                const title = document.getElementById('mainTitle');
+                const text = "⚡ HARSH DSA ROADMAP ⚡";
+                title.innerHTML = '';
+                
+                let i = 0;
+                function typeWriter() {
+                    if (i < text.length) {
+                        title.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 80);
+                    }
+                }
+                
+                setTimeout(typeWriter, 500);
+            }
+
+            // Streak Counter
+            initStreakCounter() {
+                const lastVisit = new Date(parseInt(this.lastVisit));
+                const today = new Date();
+                const diffDays = Math.floor((today - lastVisit) / (1000 * 60 * 60 * 24));
+                
+                if (diffDays === 1) {
+                    this.currentStreak = parseInt(localStorage.getItem('currentStreak') || '0') + 1;
+                } else if (diffDays > 1) {
+                    this.currentStreak = 1;
+                } else {
+                    this.currentStreak = parseInt(localStorage.getItem('currentStreak') || '0');
+                }
+                
+                localStorage.setItem('currentStreak', this.currentStreak);
+                localStorage.setItem('lastVisit', Date.now());
+                
+                document.getElementById('streakCount').textContent = this.currentStreak;
+                
+                setTimeout(() => {
+                    document.getElementById('streakCounter').classList.add('show');
+                }, 3000);
+            }
+
+            // Random Motivational Quotes
+            showRandomQuote() {
+                const quotePopup = document.getElementById('quotePopup');
+                const quoteText = document.getElementById('quoteText');
+                
+                setInterval(() => {
+                    const randomQuote = this.motivationalQuotes[Math.floor(Math.random() * this.motivationalQuotes.length)];
+                    quoteText.textContent = randomQuote;
+                    
+                    quotePopup.classList.add('show');
+                    
+                    setTimeout(() => {
+                        quotePopup.classList.remove('show');
+                    }, 4000);
+                }, 30000); // Show every 30 seconds
+            }
+
+            // Live Stats
+            initLiveStats() {
+                setTimeout(() => {
+                    document.getElementById('liveStats').classList.add('show');
+                }, 4000);
+
+                setInterval(() => {
+                    const elapsed = Math.floor((Date.now() - this.startTime) / 1000 / 60);
+                    document.getElementById('timeActive').textContent = elapsed + 'm';
+                    document.getElementById('modulesDone').textContent = this.completedModules;
+                    
+                    // Update current phase based on progress
+                    const progress = this.calculateOverallProgress();
+                    const phase = Math.min(Math.floor(progress / 20) + 1, 5);
+                    document.getElementById('currentPhase').textContent = phase;
+                }, 1000);
+            }
+
+            // Progress Ring
+            initProgressRing() {
+                const circle = document.getElementById('progressCircle');
+                const radius = 26;
+                const circumference = 2 * Math.PI * radius;
+                
+                circle.style.strokeDasharray = circumference;
+                circle.style.strokeDashoffset = circumference;
+                
+                this.updateProgressRing = (progress) => {
+                    const offset = circumference - (progress / 100) * circumference;
+                    circle.style.strokeDashoffset = offset;
+                };
+            }
+
+            // Scroll Animations
+            initScrollAnimations() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+
+                document.querySelectorAll('.reveal, .reveal-left, .reveal-zoom').forEach(el => {
+                    observer.observe(el);
+                });
+            }
+
+            // Confetti Explosion
+            createConfetti() {
+                const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'];
+                
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.className = 'confetti';
+                        confetti.style.left = Math.random() * 100 + '%';
+                        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.animationDelay = Math.random() * 2 + 's';
+                        
+                        document.body.appendChild(confetti);
+                        
+                        setTimeout(() => {
+                            confetti.remove();
+                        }, 3000);
+                    }, i * 50);
+                }
+            }
+
+            // Achievement System
+            showAchievement(icon, message) {
+                const badge = document.getElementById('achievementBadge');
+                badge.textContent = icon;
+                badge.classList.add('show');
+                
+                setTimeout(() => {
+                    this.showCelebration(message);
+                }, 1000);
+                
+                setTimeout(() => {
+                    badge.classList.remove('show');
+                }, 3000);
+            }
+
+            // Celebration Modal
+            showCelebration(message) {
+                const modal = document.getElementById('celebrationModal');
+                const messageEl = document.getElementById('celebrationMessage');
+                
+                messageEl.textContent = message;
+                modal.classList.add('show');
+                
+                this.createConfetti();
+            }
+
+            // Storage functions
+            getProgress(moduleId) {
+                try {
+                    const value = localStorage.getItem(`progress_${moduleId}`);
+                    return value === null ? 0 : Math.max(0, Math.min(100, Number(value)));
+                } catch (e) {
+                    return 0;
+                }
+            }
+
+            setProgress(moduleId, percentage) {
+                try {
+                    const pct = Math.round(Math.max(0, Math.min(100, Number(percentage))));
+                    localStorage.setItem(`progress_${moduleId}`, pct.toString());
+                    return pct;
+                } catch (e) {
+                    return percentage;
+                }
+            }
+
+            getDate(moduleId) {
+                try {
+                    return localStorage.getItem(`date_${moduleId}`) || '';
+                } catch (e) {
+                    return '';
+                }
+            }
+
+            setDate(moduleId, date) {
+                try {
+                    if (date && date.trim()) {
+                        localStorage.setItem(`date_${moduleId}`, date);
+                    } else {
+                        localStorage.removeItem(`date_${moduleId}`);
+                    }
+                } catch (e) {
+                    // Silent fail
+                }
+            }
+
+            // UI Updates
+            updateModuleUI(moduleId, percentage) {
+                const progressBar = document.getElementById(`bar-${moduleId}`);
+                const percentPill = document.getElementById(`pct-${moduleId}`);
+                const checkbox = document.querySelector(`.done-checkbox[data-target="${moduleId}"]`);
+                const module = document.querySelector(`[data-module="${moduleId}"]`);
+
+                if (progressBar) {
+                    progressBar.style.width = `${percentage}%`;
+                }
+
+                if (percentPill) {
+                    percentPill.textContent = `${percentage}%`;
+                }
+
+                if (checkbox) {
+                    checkbox.checked = percentage >= 100;
+                }
+
+                if (module) {
+                    const wasCompleted = module.classList.contains('completed');
+                    module.classList.toggle('completed', percentage >= 100);
+                    
+                    if (percentage >= 100 && !wasCompleted) {
+                        this.handleModuleCompletion(moduleId);
+                        this.completedModules++;
+                    } else if (percentage < 100 && wasCompleted) {
+                        this.completedModules = Math.max(0, this.completedModules - 1);
+                    }
+                }
+            }
+
+            updateModuleDate(moduleId, date) {
+                const datePicker = document.getElementById(`date-${moduleId}`);
+                if (datePicker) {
+                    datePicker.value = date;
+                }
+            }
+
+            calculatePhaseProgress(phaseNumber) {
+                let startIndex, endIndex;
+                if (phaseNumber <= 4) {
+                    startIndex = (phaseNumber - 1) * 4;
+                    endIndex = startIndex + 4;
+                } else {
+                    // Phase 5 has modules 17-20
+                    startIndex = 16;
+                    endIndex = 20;
+                }
+
+                let totalProgress = 0;
+                let moduleCount = 0;
+
+                for (let i = startIndex; i < endIndex && i < this.modules.length; i++) {
+                    totalProgress += this.getProgress(this.modules[i]);
+                    moduleCount++;
+                }
+
+                return moduleCount > 0 ? Math.round(totalProgress / moduleCount) : 0;
+            }
+
+            updatePhaseProgress() {
+                this.phases.forEach(phaseNumber => {
+                    const progress = this.calculatePhaseProgress(phaseNumber);
+                    const phaseElement = document.getElementById(`phasePercent-${phaseNumber}`);
+                    if (phaseElement) {
+                        phaseElement.textContent = `${progress}%`;
+                    }
+                });
+            }
+
+            calculateOverallProgress() {
+                let totalProgress = 0;
+                this.modules.forEach(moduleId => {
+                    totalProgress += this.getProgress(moduleId);
+                });
+                return Math.round(totalProgress / this.modules.length);
+            }
+
+            updateOverallProgress() {
+                const progress = this.calculateOverallProgress();
+                const statsElement = document.getElementById('overallStats');
+                const fillElement = document.getElementById('overallFill');
+
+                if (statsElement) {
+                    statsElement.textContent = `${progress}%`;
+                }
+
+                if (fillElement) {
+                    fillElement.style.width = `${progress}%`;
+                }
+
+                if (this.updateProgressRing) {
+                    this.updateProgressRing(progress);
+                }
+            }
+
+            // Module completion with celebrations
+            handleModuleCompletion(moduleId) {
+                // Different celebrations based on milestones
+                if (this.completedModules === 0) {
+                    this.showAchievement('🎯', 'First module completed! You\'re on fire! 🔥');
+                } else if (this.completedModules === 4) {
+                    this.showAchievement('⚡', 'Lightning fast! 5 modules down! ⚡');
+                } else if (this.completedModules === 9) {
+                    this.showAchievement('🚀', 'Halfway there! You\'re unstoppable! 🚀');
+                } else if (this.completedModules === 14) {
+                    this.showAchievement('💎', 'Diamond level achieved! 💎');
+                } else if (this.completedModules === 19) {
+                    this.showAchievement('👑', 'LEGEND! All modules completed! You\'re a DSA MASTER! 👑');
+                } else if (this.completedModules % 3 === 2) {
+                    this.showAchievement('🌟', 'Amazing progress! Keep the momentum! 🌟');
+                }
+            }
+
+            // Event Handlers
+            handleProgressBarClick(event) {
+                const target = event.currentTarget;
+                const moduleId = target.getAttribute('data-target');
+                const rect = target.getBoundingClientRect();
+                const clickX = event.clientX - rect.left;
+                const percentage = Math.round((clickX / rect.width) * 100);
+
+                this.setProgress(moduleId, percentage);
+                this.updateModuleUI(moduleId, percentage);
+                this.updatePhaseProgress();
+                this.updateOverallProgress();
+            }
+
+            handleProgressBarRightClick(event) {
+                event.preventDefault();
+                const target = event.currentTarget;
+                const moduleId = target.getAttribute('data-target');
+
+                this.setProgress(moduleId, 0);
+                this.updateModuleUI(moduleId, 0);
+                this.updatePhaseProgress();
+                this.updateOverallProgress();
+            }
+
+            handleCheckboxChange(event) {
+                const checkbox = event.target;
+                const moduleId = checkbox.getAttribute('data-target');
+                const percentage = checkbox.checked ? 100 : 0;
+
+                this.setProgress(moduleId, percentage);
+                this.updateModuleUI(moduleId, percentage);
+                this.updatePhaseProgress();
+                this.updateOverallProgress();
+            }
+
+            handleDateChange(event) {
+                const datePicker = event.target;
+                const moduleId = datePicker.getAttribute('data-target');
+                const date = datePicker.value;
+
+                this.setDate(moduleId, date);
+            }
+
+            // Load saved data
+            loadSavedData() {
+                this.modules.forEach(moduleId => {
+                    const progress = this.getProgress(moduleId);
+                    const date = this.getDate(moduleId);
+
+                    this.updateModuleUI(moduleId, progress);
+                    this.updateModuleDate(moduleId, date);
+                    
+                    if (progress >= 100) {
+                        this.completedModules++;
+                    }
+                });
+
+                this.updatePhaseProgress();
+                this.updateOverallProgress();
+            }
+
+            // Attach event listeners
+            attachEventListeners() {
+                // Progress bar click handlers
+                document.querySelectorAll('.progress-bar').forEach(bar => {
+                    bar.addEventListener('click', this.handleProgressBarClick.bind(this));
+                    bar.addEventListener('contextmenu', this.handleProgressBarRightClick.bind(this));
+                });
+
+                // Checkbox handlers
+                document.querySelectorAll('.done-checkbox').forEach(checkbox => {
+                    checkbox.addEventListener('change', this.handleCheckboxChange.bind(this));
+                });
+
+                // Date picker handlers
+                document.querySelectorAll('.date-picker').forEach(datePicker => {
+                    datePicker.addEventListener('change', this.handleDateChange.bind(this));
+                });
+            }
+
+            // Public methods
+            resetAllProgress() {
+                this.modules.forEach(moduleId => {
+                    this.setProgress(moduleId, 0);
+                    this.setDate(moduleId, '');
+                    this.updateModuleUI(moduleId, 0);
+                    this.updateModuleDate(moduleId, '');
+                });
+
+                this.completedModules = 0;
+                this.updatePhaseProgress();
+                this.updateOverallProgress();
+            }
+
+            init() {
+                this.loadSavedData();
+                this.attachEventListeners();
+                
+                // Expose methods globally
+                window.roadmapReset = () => this.resetAllProgress();
+            }
+        }
+
+        // DSA Practice Tracker
+        function updateTracker() {
+            const goal = document.getElementById('goal').value;
+            const progress = document.getElementById('progress').value;
+            const circle = document.getElementById('trackerCircle');
+            const motivation = document.getElementById('motivationText');
+
+            if (goal > 0 && progress >= 0) {
+                const percent = Math.min(100, Math.round((progress / goal) * 100));
+                circle.style.background = `conic-gradient(var(--neon-cyan) ${percent * 3.6}deg, var(--secondary-bg) ${percent * 3.6}deg)`;
+                circle.textContent = percent + '%';
+
+                // Save tracker data
+                localStorage.setItem('dsaTrackerGoal', goal);
+                localStorage.setItem('dsaTrackerProgress', progress);
+
+                if (percent < 25) {
+                    motivation.textContent = "Keep going 💪 You're just getting started!";
+                } else if (percent < 50) {
+                    motivation.textContent = "Great progress! 🚀 You're building momentum!";
+                } else if (percent < 75) {
+                    motivation.textContent = "Awesome work! 🔥 You're more than halfway there!";
+                } else if (percent < 100) {
+                    motivation.textContent = "Almost there! 🎯 The finish line is in sight!";
+                } else {
+                    motivation.textContent = "Congratulations! 🎉 Goal achieved! Set a new challenge!";
+                }
+            } else {
+                motivation.textContent = "Please set a valid goal and progress.";
+            }
+        }
+
+        // Load saved tracker data
+        function loadTrackerData() {
+            const savedGoal = localStorage.getItem('dsaTrackerGoal');
+            const savedProgress = localStorage.getItem('dsaTrackerProgress');
+            
+            if (savedGoal) {
+                document.getElementById('goal').value = savedGoal;
+            }
+            if (savedProgress) {
+                document.getElementById('progress').value = savedProgress;
+                updateTracker();
+            }
+        }
+
+        // Global functions
+        function closeCelebration() {
+            document.getElementById('celebrationModal').classList.remove('show');
+        }
+
+        // Initialize the ultimate dark roadmap
+        const ultimateDarkRoadmap = new UltimateDarkRoadmap();
+
+        // Load tracker data when page loads
+        document.addEventListener('DOMContentLoaded', loadTrackerData);
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'r' && e.shiftKey) {
+                e.preventDefault();
+                if (confirm('Are you sure you want to reset all progress? This action cannot be undone.')) {
+                    ultimateDarkRoadmap.resetAllProgress();
+                }
+            }
+        });
+
+        console.log(`
+🌟 HARSH'S ULTIMATE DARK DSA ROADMAP - COMPLETE EDITION! 🌟
+
+✨ COMPLETE FEATURES INCLUDED:
+🎨 Premium Dark UI with Neon Highlights
+⚡ Vibrant Animated Title "HARSH DSA ROADMAP"
+🌌 Enhanced Constellation with 150+ Stars
+🔮 25 Floating Orbs with Multiple Colors
+📊 Live Stats Panel with Real-time Updates
+⭕ Circular Progress Ring Indicator
+🔥 Advanced Streak Tracking System
+✨ Glass Morphism Cards & Effects
+🎆 Premium Loading Screen
+🌊 Animated Grid Background
+⚡ Neon Glow & Shimmer Effects
+🏆 Epic Achievement System
+🎉 Confetti Celebrations
+🌈 Dynamic Motivational Quotes
+📚 All 20 Modules Across 5 Phases
+🤖 Complete AI Tools Section
+📊 DSA Practice Tracker
+🌐 Social Media Integration
+💾 Full Progress Persistence
+🎯 Scroll Reveal Animations
+⌨️ Keyboard Shortcuts (Ctrl+Shift+R to reset)
+
+🚀 THIS IS THE MOST ADVANCED DSA LEARNING PLATFORM EVER CREATED! 🚀
+💎 COMPLETE PREMIUM DARK EDITION - EXCLUSIVELY FOR HARSH! 💎
+        `);
+    </script>
 </body>
 </html>
